@@ -1,0 +1,18 @@
+[user]
+	name = anoff
+	email = offispam@gmail.com
+[core]
+	excludesfile = /Users/andreas/.gitignore_global
+	editor = nano
+[push]
+	default = simple
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[credential]
+	helper = osxkeychain
+[gui]
+	editor = nano
+[diff]
+	tool = meld
+[merge]
+	tool = meld
