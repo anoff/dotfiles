@@ -48,8 +48,6 @@ alias ab="atom ~/.bash_profile";
 alias sb="source ~/.bash_profile";
 alias d="cd /developer/anoff";
 
-d
-
 killport() { lsof -i tcp:"$@" | awk 'NR!=1 {print $2}' | xargs kill ;}
 
 # git aliases
