@@ -29,7 +29,7 @@ rand_element () {
 }
 
 #Default Prompt
-PS1="${PINK}\w${GREEN}\$(git_branch)${WHITE}\n$(rand_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 💩 👺 🐢 🙈 🙉 🙊 🍣 🍕 🍒 🍺 ⛩ ✿ 🌊 🍜 🍱 🍙)  $ ";
+PS1="$(rand_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 💩 👺 🐢 🙈 🙉 🙊 🍣 🍕 🍒 🍺 ⛩ ✿ 🌊 🍜 🍱 🍙) ${PINK}\w${GREEN}\$(git_branch)${WHITE}\n▶︎";
 
 # PATH ALTERATIONS
 ## Node
@@ -38,7 +38,6 @@ PATH="/usr/local/bin:$PATH";
 PATH="$PATH:~/.bin";
 
 # Custom Aliases
-alias a="atom .";
 alias ll="ls -al";
 alias ..="cd ../";
 alias ..l="cd ../ && ll";
