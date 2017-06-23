@@ -1,0 +1,1 @@
+/Users/anoff/.nvm/versions/node/v8.1.2/lib/node_modules/spaceship-zsh-theme/spaceship.zsh
