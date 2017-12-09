@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/anoff/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -45,7 +45,7 @@ ZSH_THEME="spaceship"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM="/Users/anoff/.dotfiles/zsh-custom/"
+ZSH_CUSTOM="$HOME/.dotfiles/zsh-custom/"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -86,7 +86,7 @@ alias gd="git diff";
 alias ni="npm install";
 alias rmn="rm -rf node_modules;"
 alias flush-npm="rm -rf node_modules && npm i && say NPM is done";
-alias npmig="npm install -g phantomjs-prebuilt gulp node-inspector angular-cli yo"
+alias npmig="npm install -g commitizen cz-conventional-kawaii jq.node standard"
 
 # source nvm
 export NVM_DIR="$HOME/.nvm"
@@ -123,5 +123,4 @@ export TERM="xterm-256color"
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PROMPT_SYMBOL=▶
 SPACESHIP_TIME_SHOW=true
-source "/Users/anoff/.dotfiles/zsh-custom//themes/spaceship.zsh-theme"
-
+source "$HOME/.dotfiles/zsh-custom/themes/spaceship.zsh-theme"
