@@ -81,7 +81,7 @@ alias gp="git push"
 # npm aliases
 alias rmn="rm -rf node_modules"
 alias flush-npm="rm -rf node_modules && npm i && say NPM is done";
-alias npmig="npm install -g commitizen cz-conventional-kawaii jq.node standard"
+alias npmig="npm install -g commitizen cz-conventional-kawaii jq.node standard np npm-check-updates conventional-changelog-cli"
 
 # source nvm
 lnvm() {
@@ -102,8 +102,8 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_PROMPT_SYMBOL=▶
+SPACESHIP_CHAR_ADD_NEWLINE=false
+SPACESHIP_CHAR_SYMBOL=▶
 SPACESHIP_TIME_SHOW=true
 
 # added by Miniconda3 4.3.21 installer
