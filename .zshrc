@@ -10,11 +10,11 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="false"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -51,7 +51,7 @@ ZSH_CUSTOM="$HOME/.dotfiles/zsh-custom/"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx nvm npm python brew aws)
+plugins=(git osx brew)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -68,49 +68,31 @@ alias ll="ls -hal";
 alias ..="cd ../";
 alias ..l="cd ../ && ll";
 alias cg="echo 'Curling Google' && curl google.com";
-alias oc="open -a 'Google Chrome' $1";
 alias sb="source ~/.zshrc";
 alias d="cd /developer/anoff";
+alias c="open -a 'Visual Studio Code' ."
 
 killport() { lsof -i tcp:"$@" | awk 'NR!=1 {print $2}' | xargs kill ;}
 
 # git aliases
-alias gc="git commit -m $1";
-alias gs="git status";
-alias gp="git pull";
-alias gf="git fetch";
-alias gpush="git push";
-alias gd="git diff";
+alias gc="git cz";
+alias gp="git push"
 
 # npm aliases
-alias ni="npm install";
-alias rmn="rm -rf node_modules;"
+alias rmn="rm -rf node_modules"
 alias flush-npm="rm -rf node_modules && npm i && say NPM is done";
 alias npmig="npm install -g commitizen cz-conventional-kawaii jq.node standard"
 
 # source nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+lnvm() {
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+}
 
 export TERM="xterm-256color"
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -123,4 +105,8 @@ export TERM="xterm-256color"
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PROMPT_SYMBOL=▶
 SPACESHIP_TIME_SHOW=true
-source "$HOME/.dotfiles/zsh-custom/themes/spaceship.zsh-theme"
+
+# added by Miniconda3 4.3.21 installer
+export PATH="/Users/anoff/miniconda3/bin:$PATH"
+
+eval $(thefuck --alias)
