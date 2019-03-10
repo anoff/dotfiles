@@ -1,9 +1,9 @@
 [user]
-	name = anoff
+	name = Andreas Offenhaeuser
 	email = offenhaeuser@gmail.com
 [core]
 	excludesfile = /Users/andreas/.gitignore_global
-	editor = nano
+	editor = code --wait
 [push]
 	default = simple
 [alias]

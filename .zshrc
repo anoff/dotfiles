@@ -64,13 +64,16 @@ PATH="/usr/local/bin:$PATH";
 PATH="$PATH:~/.bin";
 
 # Custom Aliases
+alias tf="terraform"
 alias ll="ls -hal";
 alias ..="cd ../";
 alias ..l="cd ../ && ll";
 alias cg="echo 'Curling Google' && curl google.com";
 alias sb="source ~/.zshrc";
+alias gpf="git push --force-with-lease"
 alias d="cd /developer/anoff";
 alias c="open -a 'Visual Studio Code' ."
+alias ngrok="~/bin/ngrok"
 
 killport() { lsof -i tcp:"$@" | awk 'NR!=1 {print $2}' | xargs kill ;}
 
@@ -110,3 +113,5 @@ SPACESHIP_TIME_SHOW=true
 export PATH="/Users/anoff/miniconda3/bin:$PATH"
 
 eval $(thefuck --alias)
+
+source ~/.dronerc
