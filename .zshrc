@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -7,7 +14,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="false"
@@ -61,7 +68,7 @@ source $ZSH/oh-my-zsh.sh
 ## Node
 PATH="/usr/local/bin:$PATH";
 # #Custom bins
-PATH="$PATH:~/.bin";
+PATH="$PATH:$HOME/bin";
 
 # Custom Aliases
 alias tf="terraform"
@@ -71,9 +78,8 @@ alias ..l="cd ../ && ll";
 alias cg="echo 'Curling Google' && curl google.com";
 alias sb="source ~/.zshrc";
 alias gpf="git push --force-with-lease"
-alias d="cd /developer/anoff";
+alias d="cd $HOME/developer";
 alias c="open -a 'Visual Studio Code' ."
-alias ngrok="~/bin/ngrok"
 
 killport() { lsof -i tcp:"$@" | awk 'NR!=1 {print $2}' | xargs kill ;}
 
@@ -97,21 +103,10 @@ export TERM="xterm-256color"
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-SPACESHIP_CHAR_ADD_NEWLINE=false
-SPACESHIP_CHAR_SYMBOL=▶
-SPACESHIP_TIME_SHOW=true
-
 # added by Miniconda3 4.3.21 installer
-export PATH="/Users/anoff/miniconda3/bin:$PATH"
+export PATH="$HOME/miniconda3/bin:$PATH"
 
 eval $(thefuck --alias)
 
-source ~/.dronerc
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

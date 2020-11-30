@@ -1,1 +1,1 @@
-/developer/anoff/spaceship-prompt/spaceship.zsh
+/Users/anoff/developer/spaceship-prompt/spaceship.zsh

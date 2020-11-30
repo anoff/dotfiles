@@ -4,6 +4,7 @@
 [core]
 	excludesfile = /Users/andreas/.gitignore_global
 	editor = code --wait
+	commentChar = ";"
 [push]
 	default = simple
 [alias]
@@ -16,3 +17,8 @@
 	tool = meld
 [merge]
 	tool = meld
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
